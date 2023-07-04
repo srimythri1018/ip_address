@@ -17,8 +17,6 @@ function getUserInfo() {
             showLocationOnMap(lat, lon, data);
             showTimezone(timezone, pincode);
             getPostOffices(pincode);
-  
-            // console.log(data);
           })
           .catch((error) => {
             console.log("Error:", error);
@@ -48,7 +46,6 @@ function getUserInfo() {
     btn.classList.add("removeBtn");
   
     const ipDetails = document.querySelector(".ipDetails");
-    // console.log(data)
     ipDetails.innerHTML += `
         <ul>
           <li>Lat: ${lat}</li>
@@ -60,7 +57,7 @@ function getUserInfo() {
         </ul>
         <ul>
           <li>Organisation: ${data.org}</li>
-          <li>Hostname: ${data.timezone}</li>
+          <li>Hostname: ${location.hostname}</li>
         </ul>
       
       `;
